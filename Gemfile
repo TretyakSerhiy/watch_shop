@@ -41,8 +41,7 @@ group :test do
   gem 'launchy'
   gem 'rubocop', require: false
   gem 'shoulda-matchers'
-  gem 'chromedriver-helper'
-  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
