@@ -165,6 +165,7 @@
   </div>
 </div>
 <% end %>
+
 <% if recent_products.any? %>
 
   <div class="latestproducts">
@@ -172,6 +173,7 @@
       <h3>Recently Products</h3>
 
       <% recent_products.each do |recently| %>
+
         <div class="col-md-4 product-left p-left">
           <div class="product-main simpleCart shelfItem">
             <a href="<%=recently.id %>" class="mask">
