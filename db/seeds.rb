@@ -36,7 +36,7 @@ end
 # table categories
 
 
-=begin
+
  women = Category.create(title: 'Women', bytitle: 'women', keywords: 'women', description: 'for women')
 electronic2 = Category.create(title: 'Electronic', bytitle: 'electronic2', keywords: 'electronic', description: 'electronic', parent: women)
 mechanical2 = Category.create(title: 'Mechanical', bytitle: 'mechanical2', keywords: 'mechanical', description: 'mechanical', parent: women)
@@ -53,7 +53,6 @@ royal = Category.create(title: 'Royal London', bytitle: 'royal-london', keywords
 kids = Category.create(title: 'Kids', bytitle: 'kids', keywords: 'kids', description: 'for kids')
 adriatica = Category.create(title: 'Adriatica', bytitle: 'adriatica', keywords: 'adriatica', description: 'adriatica', parent: kids)
 mechanical1 = Category.create(title: 'Anne Klein', bytitle: 'anne-klein', keywords: 'anne-klein', description: 'anne-klein', parent: kids)
-=end
 # - - - - - - - -
 
 
