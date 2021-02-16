@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
+
+gem 'devise'
 gem 'ancestry'
 gem 'breadcrumbs_on_rails'
 gem 'meta-tags'
@@ -17,6 +19,7 @@ gem 'pq'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.1'
 gem 'sass-rails', '>= 6'# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>=1.3.0'
 
