@@ -8,7 +8,7 @@ FactoryBot.define do
     title       { Faker::Lorem.word.camelcase }
     bytitle     { title.downcase }
     img         {  'p-1.png' }
-    content     { Faker::Lorem.sentence(world_count: 10) }
+    content     { Faker::Lorem.sentence(word_count: 10) }
     description { content }
     price       { rand(10..500) }
     old_price   { rand(10..500) }

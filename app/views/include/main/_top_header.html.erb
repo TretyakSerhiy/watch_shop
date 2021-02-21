@@ -1,7 +1,7 @@
 <div class="top-header">
   <div class="container">
     <div class="top-header-main">
-      <div claas="col-md-6 top-header-left">
+      <div class="col-md-6 top-header-left">
         <div class="drop">
           <div class="box">
             <select tabindex="4" class="dropdown drop">
@@ -32,21 +32,21 @@
                 <% end %>
                 <li>
                   <a href="#">
-                    Hello, <%= current_user.email %>
+                    Добро пожаловать, <%= current_user.email %>
                   </a>
                 </li>
                 <li>
-                  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+                  <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
                 </li>
                 <li>
-                  <%= link_to 'Edit', edit_user_registration_path %>
+                  <%= link_to 'Редактирование', edit_user_registration_path %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to 'Sign in', new_user_session_path %>
+                  <%= link_to 'Вход', new_user_session_path %>
                 </li>
                 <li>
-                  <%= link_to 'Sign up', new_user_registration_path %>
+                  <%= link_to 'Регистрация', new_user_registration_path %>
                 </li>
               <% end %>
             </ul>
@@ -59,6 +59,14 @@
 
           <a href="/cart" onclick="getCart(); return false;">
             <div class="total">
+              <%= image_tag('cart-1.png', alt: "") %>
+              <% if cart_items.any? %>
+                <span class="simpleCart_total">
+                  <%= format("%.2f", cart_total ) %> $
+                </span>
+              <% else %>
+                <span class="simpleCart_total">Empty Cart</span>
+              <% end %>
 
             </div>
           </a>

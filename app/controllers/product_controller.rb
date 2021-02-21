@@ -1,9 +1,11 @@
 class ProductController < ApplicationController
 
+
   after_action :register_visit, only: [:show]
 
   def show
     @product = Product.find(params[:id])
+    authorize @product
     set_page_options
   end
 
@@ -21,15 +23,13 @@ class ProductController < ApplicationController
 
   def register_visit
     session[:viewed_products] ||= []
-    session[:viewed_products] = ([product.id] + session[:viewed_products])
-    .uniq.take(3)
+    session[:viewed_products] = ([@product.id] + session[:viewed_products])
+                                .uniq
+                                .take(3)
   end
-
-
 
   def set_page_options
     set_meta_tags product.slice(:title, :keywords, :description)
-    add_breadcrumb 'Home', root_path, title: 'Home'
+    add_breadcrumb 'Home', :root_path, title: 'Home'
   end
-
 end

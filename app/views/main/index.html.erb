@@ -1,6 +1,6 @@
-<!--banner-staarts-->
+<!--banner-starts-->
 <div class="bnr" id="home">
-  <div id="top" class="callbacks_container">
+  <div  id="top" class="callbacks_container">
     <ul class="rslides" id="slider4">
       <li>
         <%= image_tag("bnr-1.jpg", alt: "" ) %>
@@ -13,7 +13,7 @@
       </li>
     </ul>
   </div>
-  <div class="clearfix"></div>
+  <div class="clearfix"> </div>
 </div>
 <!--banner-ends-->
 
@@ -28,7 +28,7 @@
         <% @brands.each do |i| %>
           <div class="col-md-4 about-left">
             <figure class="effect-bubba">
-              <% image_tag(i.img, alt: "", class: "img-responsive") %>
+              <%= image_tag(i.img, alt: "", class: "img-responsive" ) %>
               <figcaption>
                 <h2><%= i.title %></h2>
                 <p><%= i.description %></p>
@@ -36,11 +36,11 @@
             </figure>
           </div>
         <% end %>
-        <div class="createfix"></div>
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>
-<!--about-end-->
+  <!--about-end-->
 <% end %>
 
 <% if @hits.nil? %>
@@ -51,18 +51,18 @@
     <div class="container">
       <div class="product-top">
         <div class="product-one">
-          <% @hits.hit.each do|hit| %>
+          <% @hits.hit.each do |hit| %>
             <div class="col-md-3 product-left">
               <div class="product-main simpleCart_shelfItem">
-                <a href="product/<%= hit.id %>" class="mask">
+                <a href="product/<%=hit.id%>" class="mask">
                   <%= image_tag(hit.img, alt: "", class: "img-responsive zoom-img" ) %>
                 </a>
                 <%= %>
                 <div class="product-bottom">
-                  <h3><a href="product/<%=hit.id %>" ><%=hit.title %></a> </h3>
+                  <h3><a href="product/<%=hit.id %>"><%=hit.title %></a></h3>
                   <p>Explore Now</p>
                   <h4>
-                    <%= link_to 'cart_items', class:'add-to-cart-link', data: { id: hit.id } do %>
+                    <%= link_to 'cart_items', class: 'add-to-cart-link', data: { id: hit.id } do %>
                       <i></i>
                     <% end %>
                     <span class=" item_price">$ <%= hit.price %></span>
@@ -72,9 +72,9 @@
                   </h4>
                 </div>
                 <div class="srch">
-                  <span>
-                    -50%
-                  </span>
+              <span>
+              - 50 %
+              </span>
                 </div>
               </div>
             </div>
@@ -85,4 +85,6 @@
     </div>
   </div>
 <% end %>
+<input type="hidden" value="<%= !current_user.nil? ? 88 : 99 %>" id="cart_access" />
 <!--product-end-->
+

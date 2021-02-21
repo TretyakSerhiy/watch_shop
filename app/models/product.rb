@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   validates :title, presence: true
-  validates :description, presence: true
+  validates :price, presence: true
 
   has_many :galleries
 
@@ -13,4 +13,5 @@ class Product < ApplicationRecord
   enum status: { active: 1, not_active: 0 }
 
   scope :active, -> { where(status: 1) }
+
 end
